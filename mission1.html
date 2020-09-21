@@ -1,0 +1,14 @@
+<!-- 진영이의 하루 지출 내역은 교통비 3000원, 식비 6000원, 음료비 3000원입니다. 삼항 조건자를
+이용하여 하루 적정 지출 비용인 1만원을 초과 했을 경우 "000원 초과"라고 출력하고, 아닐 경우에는 "돈 관리 잘 했어요!" 라고 출력하세요-->
+
+<script>
+    var traffic_p = 3000;
+    var food_p = 6000;
+    var drink_p = 3000;
+    var day_p = 10000;  
+
+    var result =  day_p - (traffic_p + food_p + drink_p);
+
+    document.write(result>=0? "돈 관리 잘 했어요!": -result+"원 초과");
+    document.write(result);
+</script>
