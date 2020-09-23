@@ -1,0 +1,21 @@
+<script>
+    var today = new Date();
+    var nowYear = today.getFullYear();
+
+    var theDate = new Date(nowYear, 11, 31);
+    var diffDate = theDate.getTime()-today.getTime();
+
+    var result = Math.ceil(diffDate/(1000*60*60*24));
+
+    document.write("연말 D-day: "+result+"일 남았습니다.<br>");
+    document.write(today+"<br>");
+    document.write(nowYear+"<br>");
+    document.write(theDate+"<br>");
+    document.write(diffDate+"<br>");
+    document.write(result);
+</script>
+<!-- 
+1초 = 1000(msc)
+1분 = 1000*60
+1시간 = 1000*60*60
+1일 = 1000*60*60*24 -->
