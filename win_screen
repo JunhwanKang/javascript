@@ -1,0 +1,5 @@
+screen.width  화면 너비값 반환
+screen.height  화면 높이값 반환
+screen.availWidth  작업 표시줄을 제외한 화면의 너비값 반환
+screen.availHeight   작업 표시줄을 제외한 화면의 높이값 반환
+screen.colorDepth   사용자 모니터가 표현 가능한 컬러 bit를 반환
