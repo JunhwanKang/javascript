@@ -1,0 +1,17 @@
+<!-- 점심시간에 짜장면, 돈가스, 김치찌개, 회덮밥 중 어떤 메뉴로 선택할지 고민이 된다면 랜덤으로 선택되도록 만들어 보세요. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘 점심은 </h1><br>
+    <script>
+        var menu = ["짜장면", "돈가스", "김치찌개", "회덮밥"];
+        var num = Math.floor(Math.random()*4);
+        document.write("<h2>"+menu[num]+"</h2>");
+    </script>
+</body>
+</html>
