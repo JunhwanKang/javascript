@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var jumsu = prompt('점수를 입력하세요.');
+        // 수100~90 우89~80 미79~70 양69~60 가59~0 
+        if(jumsu <0 || jumsu >100){
+            alert("0~100사이의 값을 입력해주세요.");
+        } else if(jumsu>=90 && jumsu<=100){
+            alert("수입니다.");
+        } else if(jumsu >= 80){
+            alert("우입니다.");
+        } else if(jumsu >=70){
+            alert("미입니다.");
+        } else if(jumsu >= 60){
+            alert("양입니다.");
+        } else {
+            alert("가입니다.");
+        } 
+        
+        /*
+        if(jumsu>100){
+            alert('최대점수는 100점입니다.');
+        } else if(jumsu>=90 && jumsu<=100){
+            alert("수입니다.");
+        } else if(jumsu >= 80){
+            alert("우입니다.");
+        } else if(jumsu >=70){
+            alert("미입니다.");
+        } else if(jumsu >= 60){
+            alert("양입니다.");
+        } else if(jumsu >=0){
+            alert("가입니다.");
+        } else{
+            alert("점수는 최소 0점입니다.");
+        }
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
