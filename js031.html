@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var jumsu = prompt("점수를 입력하세요.");
+        // 점수가 90점 이상이면 우수, 70점 이상이면 합격, 미만이면 재시험이라고 출력하시오.
+        // 단 점수가 100점을 초과하거나 0점이 안된다면 "점수는 0~100점 사이입니다"라고 출력하시오
+        if(jumsu < 0 || jumsu > 100){
+            document.write("점수는 0~100점 사이입니다.");
+        } else if(jumsu>=90){
+            document.write("우수");
+        } else if(jumsu >=70){
+            document.write("합격");
+        } else {
+            document.write("재시험");
+        }
+</script>
+</head>
+<body>
+    
+</body>
+</html>
