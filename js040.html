@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개수</title>
+    <script>
+        var jumsu = [77, 85, 90, 65, 70, 83, 92];
+        var cnt= 0;
+        //원소의 개수를 출력하시오
+    /*
+        for(var i=0; i<7; i++){
+            cnt++;
+        }
+        console.log(cnt); 
+        
+
+        // 1. 80점이상인 점수의 개수를 출력하시오.
+        for(var j=0; j<7; j++){
+            if(jumsu[j]>=80){
+                cnt++;
+            }
+        }
+        console.log(cnt);
+    */    
+
+        // 2. 80이상 90이하인 점수의 개수를 출력하시오.
+        for(var i=0; i<7; i++){
+            if(jumsu[i]>=80 && jumsu[i]<=90){
+                cnt++;
+            }
+        }
+        console.log(cnt);
+    </script>
+</head>
+<body>
+</body>
+</html>

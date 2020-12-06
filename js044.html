@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최대값</title>
+    <script>
+        var scores = [77, 88, 99, 55, 66, 75, 80, 95];
+        //최대값을 출력하시오.
+        var max = scores[0];
+        var min = scores[0];
+        for(score of scores){
+            if(score>max){
+                max = score;
+            }
+            if(score<min){
+                min = score;
+            }
+        }
+        console.log("최대값: " + max);
+        console.log("최소값: " + min);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

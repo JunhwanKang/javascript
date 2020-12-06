@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var jumsu = [77, 88, 99, 55, 66, 75, 80, 95];
+        // 70점이상이면 합격, 아니면 불합격
+        // 합격자의 숫자, 불합격자의 숫자를 출력하시오
+        var cntOfPass = 0;
+        var cntOfFail = 0;
+        for(var i=0; i<8; i++){
+            if(jumsu[i]>=70){
+                cntOfPass++;
+            } else{
+                cntOfFail++;
+            }
+        }
+        console.log("합격자 : "+ cntOfPass);
+        console.log("불합격자 : "+ cntOfFail);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

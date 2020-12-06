@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var scores = [77, 88, 99, 55, 66, 75, 80, 95, 100, 85];
+        var count = 0;
+        // 1. 100점 만점이 있는 지 출력하시오.
+        for(score of scores){
+            if(score==100){
+                console.log(true);        
+            }
+        }
+        
+        // 2. 최대값과 최소값을 출력하시오.
+        var max = scores[0];
+        var min = scores[0];
+
+        for(score of scores){
+            if(score > max){
+                max = score;
+            }
+            if(score < min){
+                min = score;
+            }
+        }
+        console.log("최대값은 : " + max);
+        console.log("최소값은 : " + min);
+        // 3. 60점미만인 점수의 개수, 90점이상인 점수의 개수
+        var cntOfUnderSix = 0;
+        var cntOfUpNine = 0;
+        for(score of scores){
+            if(score>=90){
+                cntOfUpNine++;
+            }
+            if(score<60){
+                cntOfUnderSix++
+            }
+        }
+        console.log("90점이상 : " + cntOfUpNine);
+        console.log("60점미만 : " + cntOfUnderSix);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
