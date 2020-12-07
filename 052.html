@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [77, 66, 55, 88, 100, 95, 80];
+        //70점 이상 80점 미만인 점수의 개수와 70점 미만 또는 90점 이상인 점수의 개수
+        //1,4
+        var cnt1 = 0;
+        var cnt2 = 0;
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]>=70 && arr[i]<80){
+                cnt1++;
+            }
+            if(arr[i]<70 || arr[i]>=90){
+                cnt2++;
+            }
+        }
+        console.log(cnt1);
+        console.log(cnt2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

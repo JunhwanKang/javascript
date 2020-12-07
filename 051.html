@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [77, 66, 55, 88, 100, 95, 80];
+        var upNine = 0;
+        var upSeven = 0;
+        var underSeven = 0;
+        //90점 이상, 70점 이상, 70점 미만인 점수의 개수를 출력
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]>=90){
+                upNine++;
+            } 
+            if(arr[i]>=70){
+                upSeven++;
+            } else {
+                underSeven++;
+            }
+        }
+        console.log("90점 이상 : " + upNine);
+        console.log("70점 이상 : " + upSeven);
+        console.log("70점 미만 : " + underSeven);
+    </script>
+</head>
+<body>
+</body>
+</html>

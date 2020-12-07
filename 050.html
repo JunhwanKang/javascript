@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>   
+        var arr = [77, 66, 55, 88, 100, 95, 80];
+        // 성적이 70점 미만이면 보충수업 대상이다.
+        // 보충 수업 대상자의 숫자와 보충수업이 필요 없는 숫자를 출력 
+        var subClass = 0;
+        var noSubClass = 0;
+        var subClass2 = 0;
+        var noSubClass2 = 0;
+
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]<70){
+                subClass++
+            } else{
+                noSubClass++;
+            }
+        }
+        console.log("보충수업 대상 : " + subClass);
+        console.log("보충수업 비대상 : " + noSubClass);
+
+/* ==================================================================== */
+     
+        for(score of arr){
+            if(score<70){  
+                subClass2++
+            } else{
+                noSubClass2++
+            }
+        }
+        console.log("보충수업 대상 : "+ subClass2);
+        console.log("보충수업 비대상 : "+noSubClass2);
+    </script>
+</head>
+<body>
+</body>
+</html>

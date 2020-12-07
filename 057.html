@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         var arr = [77, 66, 55, 88, 100, 95, 80];
+        var su = 0, wu = 0, mi = 0, yang=0, ga = 0;
+        // 수 우 미 양 가 각각 점수의 개수를 출력
+        // 수:2 우:2 미:1 양:1 가:1
+        // 100~90 수 89~80 우 79~70 미 69~60 양 59~0 가
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]>=90){
+                su++;
+            } else if(arr[i]>=80){
+                wu++;
+            } else if(arr[i]>=70){
+                mi++
+            } else if(arr[i]>=60){
+                yang++;
+            } else{
+                ga++;
+            }
+        }
+        console.log("수: "+su+" 우: "+wu+" 미: "+mi+" 양: "+yang+" 가: "+ga);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

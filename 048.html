@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [77, 66, 55, 88, 100, 95, 80];
+
+        // 1. 80~90사이인 점수를 반복문으로 출력
+
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]>=80 && arr[i]<=90){
+                console.log(arr[i]);
+            }
+        }
+
+        // 2. 80~90사이인 점수를 of반복문으로 출력
+
+        for(score of arr){
+            if(score>=80 && score<=90){
+                console.log(score);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
