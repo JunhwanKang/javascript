@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ban = [
+            {name: '홍길동', kor: 88, eng: 77},
+            {name: '전우치', kor: 85, eng: 90},
+            {name: '임꺽정', kor: 90, eng: 75},
+            {name: '이몽룡', kor: 75, eng: 70}
+        ];
+
+        // 1. 국어 점수가 80점 이상인  학생의 숫자 
+        var cnt1 = 0;
+        for(student of ban){
+            if(student.kor>=80){
+                cnt1++
+            }
+        }
+        console.log(cnt1);
+
+        // 국어 점수와 영어 점수가 모두 80점 이상인 숫자
+        var cnt2 = 0;
+        for(student of ban){
+            if(student.kor >= 80 && student.eng >= 80){
+                cnt2++
+            }
+        }
+        console.log(cnt2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

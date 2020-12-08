@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 10, b = 20;
+        function sum(x, y) {
+            // 결과 값을 되돌린다.
+           return x+y;
+        }
+        //함수는 실행이 끝나면 결과로 바뀐다.
+        console.log(sum(a,b));
+        console.log(sum(100,250));
+
+        // 숫자 세개를 덧셈하는 함수
+        function hap(x, y, z){
+            return x + y + z;
+        }
+        console.log(hap(10, 20, 30));
+        console.log(hap(10, 20));  // NaN (원래는 에러)
+    </script>
+</head>
+<body>
+</body>
+</html>

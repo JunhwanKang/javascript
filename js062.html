@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ban = [
+            {name: '전우치', score: 75},
+            {name: '홍길동', score: 88},
+            {name: '임꺽정', score: 90}
+        ];
+        // 모두 출력
+        for(student of ban){
+            console.log(student);
+        }
+        // 최대값 : 1등은 누구?
+        var max = ban[0];
+        for(student of ban){
+           for(var i=1; i<ban.length; i++){
+               if(ban[i].score>max.score){
+                    max = ban[i];
+               }
+           } 
+           console.log("1등의 이름: " + max.name);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

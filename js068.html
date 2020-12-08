@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ban = [
+        {name: '홍길동', kor: 88, eng: 77},
+        {name: '전우치', kor: 85, eng: 90},
+        {name: '임꺽정', kor: 90, eng: 75},
+        {name: '이몽룡', kor: 75, eng: 70}
+        ];
+        // 국어가 1등인 학생의 이름
+        var korMaxStu = ban[0];
+        for(student of ban){
+            if(student.kor> korMaxStu.kor){
+                korMaxStu = student;
+            }
+        }
+        console.log(korMaxStu.name);
+
+        // 영어 성적이 1등인 학생의 이름
+        var engMaxStu = ban[0];
+        for(student of ban){
+            if(student.eng > engMaxStu.eng){
+                engMaxStu = student;
+            }
+        }
+        console.log(engMaxStu.name);
+    </script>
+</head>
+<body>
+</body>
+</html>
