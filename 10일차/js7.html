@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 점수를 입력받아 90점 이상이면 우수, 70점 이상이면 통과, 아니면 재시험이라고 출력하는 함수를
+        // 작성하고 테스트하시오.
+        var input = prompt("점수 입력");
+        function checkPass(score){
+            if(score>=90){
+                return "우수";
+            } else if(score>=70){
+                return "통과";
+            }else{
+                return "재시험";
+            }
+        }
+        alert(checkPass(input));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
