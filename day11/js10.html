@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1~100중에서 3의 배수가 아닌 수의 합 (1~100의 합 - 3의 배수의 합)
+        function sum(x,y){
+            var allSum = 0;
+            var sum3 = 0;
+            for(var i=x; i<=y; i++){
+                allSum += i;
+                if(i%3==0){
+                    sum3+=i;
+                }
+            }
+            return allSum-sum3;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alert(sum(1,100))">합계</button>
+</body>
+</html>

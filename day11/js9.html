@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //x에서 y사이의 3과 7의 공배수의 합계
+        function sum(x,y){
+            var sum = 0;
+            for(var i=x; i<=y; i++){
+                if(i%3==0 && i%7==0){
+                    sum+=i;
+                }
+            }
+            return sum;
+        }
+      
+    </script>
+</head>
+<body>
+    <button onclick="alert(sum(1,200));">합계 출력</button>
+</body>
+</html>

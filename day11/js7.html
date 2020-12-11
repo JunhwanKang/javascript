@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1~100중 5,7의 공배수
+        function sum(){
+            var sum = 0;
+            for(var i=1; i<=100; i++){
+                if(i%5==0 && i%7==0){
+                    sum+=i;
+                }
+            }
+            return sum;
+        };
+
+        function count(){
+            var count = 0;
+            for(var i=1; i<=100; i++){
+                if(i%5==0 && i%7==0){
+                    count++;
+                }
+            }
+            return count;
+        };
+        
+        function avg(){
+            return sum()/count();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alert(sum());">공배수의 합계</button>
+    <button onclick="alert(count());">공배수의 개수</button>
+    <button onclick="alert(avg());">공배수의 평균</button>
+</body>
+</html>
