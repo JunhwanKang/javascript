@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum(x,y){
+            var oddSum = 0;
+            var evenSum = 0;
+            for(var i=x; i<=y; i++){
+                if(i%2==0){
+                    evenSum+=i;
+                }else{
+                    oddSum+=i;
+                }
+            }
+            return alert("짝수의 합:"+evenSum+"홀수의 합: "+oddSum);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="sum(1,10)">출력</button>
+</body>
+</html>

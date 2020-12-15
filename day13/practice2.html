@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        var state = ["block", "none"];
+        var i=0;
+        var j=1;
+        function change(){
+            if(i>=state.length){
+                i=0;
+             }
+           var b = document.getElementById("good");
+           b.style.display=state[i];
+            i++;
+           var d = document.getElementById("bad");
+           d.style.display=state[j];
+           j--
+           if(j<0){
+               j=1;
+           }
+       }
+    </script>
+</head>
+<body>
+    <button style="display: block" onclick="change();" id="bad">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true">
+            좋아요
+        </i>
+    </button>
+    <button style="display: none" onclick="change();" id="good">
+        <i class="fa fa-thumbs-up" aria-hidden="true">
+            좋아요
+        </i>
+    </button>
+</body>
+</html>

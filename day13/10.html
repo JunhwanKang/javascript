@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function right(){
+            var t = document.getElementById("target");
+            t.src = "cat.jfif";
+        }
+        function left(){
+            var t = document.getElementById("target");
+            t.src = "dog.jfif";
+        }
+    </script>
+</head>
+<body>
+    <img src="dog.jfif" id="target" width= "300px" height="300px">
+    <button onclick="left();">왼쪽</button>
+    <button onclick="right();">오른쪽</button>
+</body>
+</html>

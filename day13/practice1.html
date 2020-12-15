@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var image = ["cat.jpg", "dog.jpg"];
+    var i = 0;
+    function change(){
+        i++;
+        if(i>=image.length){
+            i=0;
+        }
+        var animal = document.getElementById("animal");
+        animal.src = image[i];
+    }
+</script>
+<body>
+    <img src="cat.jpg" id="animal" width="300px" height="200px">
+    <button onclick="change();">바꾸기</button>
+</body>
+</html>

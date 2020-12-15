@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체의 멤버에는 변수와 함수가 있다.
+        // 객체 소속의 변수를 속성(property)
+        // 객체 소속의 함수를 method(메서드)라 한다.
+        var s1 = {
+            name: "홍길동",
+            kor: 75,
+            eng: 80,
+            print: function(){
+                alert(this.kor+this.eng);
+            } 
+        }
+        s1.print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
