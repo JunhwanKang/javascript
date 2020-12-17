@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" style="background-color: red;"></div>
+    <button id="print">div의 높이 너비 100px</button>
+    <script>
+        var btn = document.getElementById("print");
+        var div = document.getElementById("div");
+        btn.onclick = function(){
+            div.style.width = "100px";
+            div.style.height = "100px";
+            div.style.background = 'rgb(0,255,0)';
+        }
+    </script>
+
+</body>
+</html>

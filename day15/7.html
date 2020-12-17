@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target">우리나라 좋은나라</p>
+    <button id="none">사라지기</button>
+    <button id="block">나타나기</button>
+    <button id="toggle">토글</button>
+    <script>
+        var p = document.getElementById("target");
+        var toggle = document.getElementById("toggle");
+        none.onclick=function(){
+                p.style.display="none";   
+        }
+
+        block.onclick=function(){
+                p.style.display="block";   
+        }
+
+        toggle.onclick = function(){
+            if(p.style.display=="none"){
+                p.style.display = "block";
+            } else{
+                p.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
