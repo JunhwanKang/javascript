@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .join_content{
+            width: 70%;
+            margin: 0 auto;
+            padding-left: 100px;
+        }
+        .id_box{
+            border: 1px solid lightgrey;
+            height: 40px;
+            width:500px;
+            line-height: 40px;
+        }
+        #userName{
+            border: none;
+        }
+        .addr{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="join_content">
+            <h3><label for="userName">아이디</label></h3>
+            <div class="id_box">
+                <input type="text" id="userName" size="30" maxlength="20" onblur="id_checker()">
+                <span class="addr">@naver.com</span>
+            </div>
+            <span id="idMsg"></span>
+        </div>
+    </div>
+    <script>
+        function id_checker(){
+            var username = document.getElementById("userName");
+            var idMsg = document.getElementById("idMsg");
+            if(username.value ==""){
+                idMsg.innerHTML = "필수 입력입니다."
+                idMsg.style.color = "red";
+            } else{
+                idMsg.innerHTML = "멋진 아이디네요!"
+                idMsg.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

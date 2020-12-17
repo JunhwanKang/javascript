@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #username_parent{
+            border: 1px solid lightgray;
+        }
+        #username{
+            border:none;
+        }
+        .silver{color: silver;}
+        .small{
+            font-size: 0.75em;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div>
+            <label for="username">아이디</label>
+            <div id="username_parent">
+                <input type="text" id="username" size="30" maxlength="20" onblur="usernameCheck();">
+                <span class="silver">@naver.com</span>
+            </div>
+            <span class="small" id="username_msg"></span>
+        </div>
+    </div>
+    <script>
+        function usernameCheck(){
+            var username = document.getElementById("username");
+            var usernameMsg = document.getElementById("username_msg");
+            if(username.value==""){
+                usernameMsg.innerHTML="필수입력입니다."
+                usernameMsg.style.color="red";
+            }else{
+                usernameMsg.innerHTML="멋진 아이디네요!"
+                usernameMsg.style.color="green";
+            }
+        }
+    </script>
+</body>
+</html>
