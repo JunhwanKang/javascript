@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면로딩이 끝나면 자바스크립트 실행</title>
+    <script>
+        // window는 웹브라우저 .onload 웹브라우저 로딩이 끝나면
+        window.onload = function(){
+            alert(document.getElementById('target').innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <p id="target">안녕하세요</p>
+</body>
+</html>

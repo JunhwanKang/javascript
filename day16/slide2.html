@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            var arr = ['f1.jpg','f2.jpg','f3.jpg','f4.jpg'];
+            var idx = 0;
+            var left = $("#left");
+            var img = $("#img");
+            left.click(function(){
+                img.attr("src", arr[idx]);
+                idx--;
+                if(idx<0){
+                    idx = 3;
+                }
+                
+            });
+            var right = $("#right"); 
+            right.click(function(){
+                img.attr("src", arr[idx]);
+                idx++;
+                if(idx>3){
+                    idx=0;
+                }
+            })
+        })
+    </script>
+    <style>
+        #left,#right{
+            cursor: pointer;
+        }
+        #img_div{
+            position: relative;
+            width : 563px;
+            margin: 0 auto;
+            border: 1px solid blue;
+        }
+        #left{
+            display: inline;
+            position: absolute;
+            line-height: 300px;
+            height: 317px;
+            left: 11px;
+            width: 30px;
+        }
+        #right{
+            display: inline;
+            position: absolute;
+            line-height: 317px;
+            left: 540px;
+            height: 317px;
+            width: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="img_div">
+        <img id ="img" src="f1.jpg" width="563px">
+        <div id=left> << </div>
+        <div id="right"> >> </div>
+    </div>
+</body>
+</html>

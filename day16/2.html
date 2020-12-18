@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width:300px;
+            height: 300px;
+            border: 1px solid blue;
+            margin: 0 auto;
+           
+        }
+        #div{
+            width:100px;
+            height:100px;
+            background-color: red;
+            position: absolute;
+            left:100px; top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="div"></div>
+    </div>
+    <button id="relative">상대 지정</button>
+    <script>
+        var btn = document.getElementById('relative');
+        var par = document.getElementById('parent');
+        btn.onclick = function(){
+            par.style.position = "relative";
+        }
+    </script>
+    <!-- 
+        메뉴 - display: inline-block;
+        좌우로 배치 - float -> 2단레이아웃 이런거
+        임의의 위치에 배치 - position: absolute;
+     -->
+</body>
+</html>

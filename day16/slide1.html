@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            var images = ['f1.jpg','f2.jpg','f3.jpg','f4.jpg'];
+            var idx = 0;
+            // getElementById로 선택한 것과 jQuery로 선택한 것은 다르다.
+            var left = $("#left");
+            var image = $("#img");
+            left.click(function(){
+                idx--;
+                if(idx<0){
+                    idx=3;
+                }
+                image.attr("src",images[idx]);
+                $("#img").css("border", "1px solid red");
+                //image.css(aaaaa)
+            });
+            // left.on("click")
+            var right = $("#right");
+            right.click(function(){
+                idx++;
+                if(idx>3){
+                    idx=0;
+                }
+                image.attr("src",images[idx]);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img id="img" src="f1.jpg">
+    </div>
+    <button id="left"> << </button>
+    <button id="right"> >> </button>
+</body>
+</html>
