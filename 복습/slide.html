@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            var images =  ['one.png', 'two.png', 'three.png', 'four.png'];
+            var i = 0;
+            var left = $("#left");
+            var right = $("#right");
+            var imgs = $("#image");
+            left.click(function(){
+                if(i < 0){
+                    return;
+                }
+                i--;
+                imgs.attr("src", images[i]);
+
+            });
+            right.click(function(){
+                if(i > 3){
+                    return;
+                }
+                i++;
+                imgs.attr("src", images[i]);
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <img id="image" src="one.png" height="300px" width="300px" >
+    <button id="left"> << </button>
+    <button id="right"> >> </button>
+</body>
+</html>
