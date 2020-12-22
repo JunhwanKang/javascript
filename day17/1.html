@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // 함수를 만들어서 자바스크립트에서 실행을 위탁
+        // 예를 들어 이벤트 처리
+        $(document).ready(function(){
+            //callback함수를 익명함수로 가능 => 그냥 화면이 로드되면
+            //함수가 실행하므로 이름이 필요 x
+
+            $("li").css("color", "red");
+            $("#J2").text("볶음밥");
+        });
+
+        // var a = 10;
+        // var x = function(){
+        //     //이렇게 함수를 변수에 대입할 수도 있다...
+        // }
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="J1">짜장면</li>
+        <li id="J2">짬뽕</li>
+    </ul>
+</body>
+</html>

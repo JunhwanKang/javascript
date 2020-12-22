@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{ color:red;}
+        .blue{ color: blue;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var target = $("#target");
+
+            $("#red").click(function(){
+                target.removeClass('blue');
+                target.addClass("red");
+                
+            })
+            $("#blue").click(function(){
+                target.removeClass('red');
+                target.addClass("blue");
+            })
+        });
+    </script>
+</head>
+<body>
+    <p id="target">우리나라 좋은나라</p>
+    <button id="red">빨강</button>
+    <button id="blue">파랑</button>
+</body>
+</html>

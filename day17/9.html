@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //값을 변경할 수 있는 속성
+        // 속성의 존재 여부 : disabled, readonly, checked, selected
+        $(document).ready(function () {
+            var txt = $("#txt");
+            
+            $("#toggle_disabled").click(function () {
+                if(txt.prop("disabled")==true){
+                    txt.prop("disabled", false)
+                }else{
+                    txt.prop("disabled",true);
+                }
+            })
+            $("#toggle_type").click(function () {
+               if(txt.attr("type")=="text"){
+                   txt.attr("type", "password");
+               } 
+               else{
+                   txt.attr("type","text");
+               }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" value="1234" id="txt" disabled>
+
+    <button id="toggle_type">type변경</button>
+    <button id="toggle_disabled">disabled변경</button>
+</body>
+</html>

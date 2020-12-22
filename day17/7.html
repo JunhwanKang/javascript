@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function resetBackground() {
+            $("#menu>div").css("background", "rgba(0,0,0,0)");
+            $("div").css("color", "black");
+        }
+        $(document).ready(function () {
+            var img = $("#img");
+            var div1 = $("#f1");
+            var div2 = $("#f2");
+            var div3 = $("#f3");
+            var div4 = $("#f4");
+            div1.click(function () {
+                img.attr("src", "one.png");
+                resetBackground();
+                div1.css("background-color","black");
+                div1.css("color", "white");
+            })
+            div2.click(function () {
+                img.attr("src", "two.png");
+                resetBackground();
+                div2.css("background-color","black");
+                div2.css("color", "white");
+            })
+            div3.click(function () {
+                img.attr("src", "three.png");
+                resetBackground();
+                div3.css("background-color","black");
+                div3.css("color", "white");
+            })
+            div4.click(function () {
+                img.attr("src", "four.png");
+                resetBackground();
+                div4.css("background-color","black");
+                div4.css("color", "white");
+            })
+        });
+    </script>
+    <style>
+        #menu>div{
+            display: inline-block;
+            margin-right: 50px;
+            margin-top: 30px;
+            cursor: pointer;
+            border: 1px solid black;
+            text-align: center;
+            width: 50px;
+            border-radius: 100px;
+        }
+        #parent{
+            width:800px;
+            position: relative;
+        }
+        #menu{
+            position: absolute;
+            bottom: 10%;
+            left:10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+
+        <img id="img" src="one.png" width="300px" height="300px">
+        <div id="menu">
+            <div id="f1">1</div>
+            <div id="f2">2</div>
+            <div id="f3">3</div>
+            <div id="f4">4</div>
+        </div>
+    </div>
+    </body>
+    </html>

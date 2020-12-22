@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function removecss() {
+            $("li").css("background","none");
+            $("li").css("color", "black");
+        }
+        $(document).ready(function () {
+            var li1 = $("#li1");
+            var li2 = $("#li2");
+            var li3 = $("#li3");
+            var li4 = $("#li4");
+            var img = $("#img");
+            li1.click(function () {
+                img.attr("src", "one.png");
+                removecss();
+                li1.css("background",'black').css("color", "white");
+            })
+            li2.click(function () {
+                img.attr("src", "two.png");
+                removecss();    
+                li2.css("background",'black').css("color", "white");
+            })
+            li3.click(function () {
+                img.attr("src", "three.png");
+                removecss();  
+                li3.css("background",'black').css("color", "white");     
+            })
+            li4.click(function () {
+                img.attr("src", "four.png");
+                removecss(); 
+                li4.css("background",'black').css("color", "white");      
+            })
+        })
+    </script>
+    <style>
+        ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            list-style: none;
+            text-align: center;
+            border: 1px solid black;
+            line-height: 30px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+
+        <img id="img" src="one.png" width="300px" height="300px">
+        <ul>
+            <li id="li1">1</li>
+            <li id="li2">2</li>
+            <li id="li3">3</li>
+            <li id="li4">4</li>
+        </ul>
+    </div>
+</body>
+</html>

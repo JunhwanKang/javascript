@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>getter/setter</title>
+    <script>
+        $(document).ready(function(){
+            var div = $("#target");
+            console.log(div.text()); // 값 읽어오기
+            console.log(div.css("color"));
+            alert("aaa");
+            div.text("좋은 나라");
+            div.css("color", "red");
+        });
+    </script>
+</head>
+<body>
+    <p id="target">우리나라</p>
+</body>
+</html>

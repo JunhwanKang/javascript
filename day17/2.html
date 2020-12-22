@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            var t1 = document.getElementById('target');
+            var t2 = $("#target");
+
+            console.log(t1);
+            console.log(t2);
+            console.log($(t1));
+        })
+    </script>
+</head>
+<body>
+    <p id="target">안녕하세요</p>    
+</body>
+</html>
