@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            var ul = $("#ul");
+            $("#add").click(function () {
+                ul.append("<li>동적으로 추가");
+            });
+            // $("li").click(function () {     동적으로 추가 된 것에는 동작 x
+            //     alert("li 클릭 됨");
+            // })
+            $("#ul").on("click","li",function () {
+               alert("li 클릭 됨"); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="add">li추가</button>
+    <hr>
+    <ul id="ul">
+        <li>원래 있던 애</li>
+    </ul>
+</body>
+</html>

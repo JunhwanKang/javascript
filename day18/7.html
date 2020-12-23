@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>      
+        #child{
+            width: 300px;
+            
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#job1").on("click",function () {
+                $("#link").css("position", "absolute").css("bottom","10px").css("left","30px");
+            })
+            $("#job2").on("click",function () {
+                // #child의 포지션이 relative라면 
+                // static으로, static이라면 relative로
+                var child = $("#child");
+                console.log(child.css("position"));
+                if(child.css("position") == "relative"){
+                    child.css("position", "static");
+                }else{
+                    $("#child").css("position","relative");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="job1">글자 이동</button>
+    <button id="job2">relative</button>
+    <hr>
+    <div id="child">
+        <img src="left.jpg" width="300px">
+        <a href="#" id="link">어디론가 이동하기</a>
+    </div> 
+</body>
+</html>

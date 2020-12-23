@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                // input 요소 값을 읽고 쓴다 val() //일반 요소 값은 text()
+                var value = parseInt($("#value").val());
+                $("#result").text("입력값:"+value)
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="value" id="value">
+    <button id="btn">출력</button>
+    <hr>
+    <p id="result"></p>
+</body>
+</html>

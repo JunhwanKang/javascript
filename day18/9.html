@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #div{
+            width: 100px; height: 100px;
+            border: 1px solid red; text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#toggle").on("click", function () {
+                var line = $("#div").css("line-height");
+                console.log(line);
+                if(line=="nomal"){
+                    line= "100px";
+                }else{
+                    line= "nomal";
+                }
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="div">Hello</div>
+    <hr>
+    <!-- line-height가 nomal일 경우 100으로, 100일 경우 nomal으로 -->
+    <button id="toggle">toggle</button>
+</body>
+</html>

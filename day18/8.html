@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid orange;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#toggle").on("click", function () {
+                console.log($("#div").css("border-radius"));  
+                if($("#div").css("border-radius")=="0px"){
+                    $("#div").css("border-radius", "100px");
+                }else{
+                    $("#div").css("border-radius", "0px");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="toggle">toggle</button>
+    <div id="div">Hello</div>
+</body>
+</html>

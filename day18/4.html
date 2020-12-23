@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // click과 이벤트 처리 메서드는 화면이 로딩될 때 만들어진
+        // html요소에 대해서만 동작한다.
+        // 키보드 입력을 잡을 때 keyup 
+        $(document).ready(function () {
+            $("#src").on("keyup", function () {
+                // $("#src").val();
+                $("#dest").val($("#src").val());
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="src">
+    <hr>
+    <input type="text" id="dest">
+</body>
+</html>
