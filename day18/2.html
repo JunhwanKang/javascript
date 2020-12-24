@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //숫자 하나를 입력받아 제곱해서 출력
+        $(document).ready(function () {
+            $("#btn").click(function () {  
+                var value = parseInt($("#value").val());
+                $("#out").text("입력값의 제곱: "+value*value);
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="value" id="value">
+    <button id="btn">출력</button>
+    <hr>
+    <p id="out"></p>
+</body>
+</html>
