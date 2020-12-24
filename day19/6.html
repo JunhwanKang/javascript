@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            $(".add").on("click", function () {
+                alert($(this).data("pno"));      // 최대한 원래 타입
+                alert($(this).attr("data-pno")); //글자로 읽음
+            })
+        });
+    </script>
+</head>
+<body>
+    <button class="add" data-pno="5">장바구니 담기</button>
+    <button class="add" data-pno="4">장바구니 담기</button>
+    <button class="add" data-pno="3">장바구니 담기</button>
+    <button class="add" data-pno="2">장바구니 담기</button>
+</body>
+</html>

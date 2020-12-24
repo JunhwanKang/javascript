@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        ul, li{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .slider{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid orange;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50px;
+        }
+        #parent{
+            position: relative;
+        }
+        #slider_div{
+            text-align: center;
+            position: absolute;
+            width:300px;
+            bottom: 20px;
+            left:250px;
+        }
+        .slider:hover{
+            color:white;
+            background-color: orange;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".slider").on("mouseover",function () {
+                $("#img").attr("src", $(this).data("pname"));
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <img src="one.png" width="800px" height="800px" id="img">
+        <div id="slider_div">
+            <ul>
+                <li class="slider" data-pname="one.png">1</li>
+                <li class="slider" data-pname="two.png">2</li>
+                <li class="slider" data-pname="three.png">3</li>
+                <li class="slider" data-pname="four.png">4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
