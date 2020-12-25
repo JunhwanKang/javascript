@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #main{
+            border: 1px solid red;
+            width: 800px;
+            margin: 0 auto;
+        }
+        aside{
+            width:200px; height: 200px;
+            background-color: gray;
+            float: left;
+        }
+        section{
+            width: 598px; border: 1px solid blue;
+            float: right;
+        }
+        footer{
+            width:800px; height: 100px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#clear").on("click", function () {
+                $("footer").css("clear", "both");
+            })
+            $("#overflow").on("click",function () {
+                $("#main").css("overflow", "hidden");
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="clear">clear</button>
+    <button id="overflow">overflow</button>
+    <div id="main">
+        <aside></aside>
+        <section>
+            우리나라<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </section>
+    </div>    
+    <footer></footer>
+</body>
+</html>

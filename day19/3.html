@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        /* absolute부모가 absolute여도 된다. */
+        #parent{
+            width: 500px;
+            height: 500px; 
+            border:1px solid blue;
+            /* position: relative; */
+        }
+        #child{ 
+            width:100px; 
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 200px;
+            top:200px;
+            
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var top = 200, left=200;
+            var child = $("#child");
+            $("body").on("keyup", function (e) {
+                if(e.keyCode==37 && left>20){
+                    left-=10;
+                    
+                    child.css("left",left+"px");
+                }
+                if(e.keyCode==38 && top>20){
+                    top-=10;
+                    
+                    child.css("top",top+"px");
+                }
+                if(e.keyCode==39 && left<400){
+                    left+=10;
+                    
+                    child.css("left",left+"px");
+                }
+                if(e.keyCode==40 && top<400){
+                    top+=10;
+                    
+                    child.css("top",top+"px");
+                }
+               
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+                          //익명함수
+            // callback : 내가만들어서 실행을 위탁 <= 이벤트 처리 (handler)
+            $("#div").css("width", "400px").css("height", "400px").css("border", "1px solid orange");
+            $("#div").on("mousemove", function (e) {
+                var msg = "x:"+e.pageX+",y:"+e.pageY;
+                $("#position").text(msg);
+        
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div"></div>
+    <p id="position"></p>
+</body>
+</html>
