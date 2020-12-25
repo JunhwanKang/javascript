@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            var $body = $("body");
+            // var result = $body.append("<ul>");
+            // console.log(result)
+            var $ul = $("<ul>").appendTo($body);
+            $("<li>").text("첫번째 추가").appendTo($ul);
+            $("<li>").text("두번째 추가").appendTo($ul);
+            $("<li>").text("세번째 추가").appendTo($ul);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

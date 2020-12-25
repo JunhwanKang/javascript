@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            var json = {"no":1592030163200,"name":"Jennifer Lee","tel":"010-3456-8294","address":"서울시","photo":"http://sample.bmaster.kro.kr/photos/95.jpg"}
+            // text(), css(), val(), attr(), prop()
+            //append
+            // var x = 부모.append(자식)   ->   x에 부모가 저장
+            var $ul = $("#ul");
+            $ul.append("<li>첫번째 추가</li>")
+            // $("li") li를 선택
+            // $("<li>") li를 만들기
+
+            // 자식.appendTo(부모)  이것을 주로 사용  
+            //var x = 자식.appendTo(부모)   ->   x에 자식이 저장
+            $("<li>두번째 추가</li>").appendTo($ul);
+            $("<li>").text("세번째 추가").appendTo($ul);
+        });
+    </script>
+</head>
+<body>
+    <!-- http://sample.bmaster.kro.kr/ -->
+    <ul id="ul">
+        <li>원래 있는 애</li>
+    </ul>
+</body>
+</html>

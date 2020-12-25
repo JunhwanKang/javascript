@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            
+            $.ajax({
+                url: "http://sample.bmaster.kro.kr/contacts?pageno=1",
+                method: "get",
+                success: function (result) {
+                    // console.log(result.contacts);
+                    var $table = $("#table");
+                    var ar = ["success", "danger","index", "warning", "active"]
+                $.each(result.contacts, function (i, c) {
+                    var $tr = $("<tr>").appendTo($table).addClass(ar[i]); 
+                    $("<td>").text(c.no).appendTo($tr);
+
+                    var $name = $("<td>").text(c.name).appendTo($tr);
+                    $name.wrapInner($("<a>").attr("href","#"));    
+
+                    $("<td>").text(c.address).appendTo($tr);
+                                    
+                });
+              }
+                            
+            })
+        })
+    </script>
+</head>
+<body>
+    <table id="table" class="table">
+        <thead>
+            <th>이름</th>
+            <th>번호</th>
+            <th>주소</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>    
+</body>
+</html>

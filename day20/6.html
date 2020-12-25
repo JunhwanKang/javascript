@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Ajax 비동기</title>
+    <script>
+        // 한번에 하나씩 실행 : 동기 -> a실행 시 b실행 안됨.
+        $.ajax({
+            url: "http://sample.bmaster.kro.kr/contacts?pageno=5",
+            method: "get",
+            success: function (result) {
+                console.log(result);
+            }
+        })
+        console.log("우리나라 좋은나라")
+    </script>
+</head>
+<body>
+    동기는 작업이 순서대로 실행된다.
+    비동기는 작업이 병렬로 실행된다 -> 성능이 뛰어나지만 프로그래머가 작업 순서를 맞춰줘야 한다
+                                            -> callback
+</body>
+</html>

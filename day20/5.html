@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            // Unexpected token o in JSON : 이미 JSON이다.
+        var c = {"no":1592030163200,"name":"Jennifer Lee","tel":"010-3456-8294","address":"서울시","photo":"http://sample.bmaster.kro.kr/photos/95.jpg"}
+        // $("<img>").attr("src",c.photo).appendTo($("body"));   
+        $("#no").text(c.no);
+        $("#name").text(c.name);
+        $("#tel").text(c.tel);
+        $("#address").text(c.address);
+        $("<img>").attr("src",c.photo).appendTo($("#photo"));
+        });
+    </script>
+</head>
+<body>
+    <table id="table">
+        <tr><td>번호</td><td id="no"></td></tr>
+        <tr><td>이름</td><td id="name"></td></tr>
+        <tr><td>전화번호</td><td id="tel"></td></tr>
+        <tr><td>주소</td><td id="address"></td></tr>
+        <tr><td>사진</td><td id="photo"></td></tr>
+    </table>
+</body>
+</html>
