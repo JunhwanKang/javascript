@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person = {
+            name : "홍길동",
+            age : 25,
+            address : "인천",
+        }
+
+        var json_str = JSON.stringify(person);
+ 
+        console.log(json_str);
+
+        var str = JSON.parse(json_str);
+ 
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
