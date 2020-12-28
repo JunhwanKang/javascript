@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#click").on("click", function(){
+                $.ajax({
+                    url: "http://106.243.194.230:8500/menu/main",
+                    method: "get",
+                    success: function(arr){
+                        $("#main").empty();
+                        var ar = JSON.parse(arr);
+                        var $main = $("#main");
+                        for(element of ar){
+                            $("<option>").text(element).appendTo($main);
+                        }
+                        $("#sub").empty();
+                        $("<option>").text("요리부/식사부 선택").prop("disabled",true)
+                            .prop("selected",true).appendTo($("#sub"));
+                    }
+                });
+            });
+            $("#main").on("change",function(){
+                $.ajax({
+                    url: "http://106.243.194.230:8500/menu/sub",
+                    method: "get",
+                    // "http://106.243.194.230:8500/menu/sub?main=식사부" 이렇게 뭘 선택 했는지 넘겨 줘야 함.
+                    data: "main="+$(this).val(), 
+                    // data: "main="+$("#main").val(),  위랑 같다.
+                    success: function (arr) {
+                        $("#sub").empty();
+                        var ar = JSON.parse(arr);
+                        for(element of ar){
+                            $("<option>").text(element).appendTo($("#sub"));
+                        }
+                    }
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="click">동작</button>
+    <hr>
+    <select id="main">
+    </select>
+    <select id="sub">
+        <option disabled selected>
+            동작 버튼을 클릭하고 요리부, 식사부를 선택하세요
+        </option>
+    </select>
+</body>
+</html>

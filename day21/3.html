@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JSON : 가볍다
+        var ob = {
+            vendor:"intel",
+            name:"10700",
+            price:"400000"
+        }
+        // 자바스크립트 객체를 문자열로 표현해 네트워크로 전송 가능해짐.
+        var json = JSON.stringify(ob);
+        console.log(json);
+        console.log(JSON.parse(json));
+    </script>
+</head>
+<body>
+    네트워크로 데이터를 주고 받기 위한 문서: XML, JSON
+    <!-- XML: 무겁다
+        <제품>
+            <제조사>인텔</제조사>
+            <이름>10700</이름>
+            <가격>40000</가격>
+        </제품> 
+    -->
+</body>
+</html>
