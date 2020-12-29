@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+           $("#main").on("change", function(){
+               var params = {
+                   main:$("#main").val()
+               }
+                $.ajax({
+                    url: "http://106.243.194.230:8500/menu/main",
+                    method: "get",
+                    data: params,
+                    success: function(result){
+                        var arr = JSON.parse(result);
+                        var $sub = $("#sub");
+                        $sub.empty();
+                        for(element of arr){
+                            $("<option>").text(element).appendTo($sub);
+                        }
+                        // 서버 상태 코드 
+                        // 200 - 에러 x
+                        // 400 - 서버 거부
+                        // 403 - 권한 없음
+                        // 404 - not found
+                        // 405 - 메소드 잘못
+                        // 500 - 서버 오류
+                    }
+                });
+           }); 
+        });
+    </script>
+</head>
+<body>
+    <select id="main">
+        <option disabled selected>메인 메뉴 선택</option>
+        <option>식사부</option>
+        <option>요리부</option>
+    </select>
+    <select id="sub">
+        <option>메인 메뉴 선택 후 선택 가능</option>
+    </select>
+</body>
+</html>

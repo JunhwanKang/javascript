@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            $("#city").on("change",function () {
+                var params = {
+                    city:$("#city").val()
+                };
+                $.ajax({
+                   url: "http://106.243.194.230:8500/list/gu",
+                   method: "get",
+                   data: params,
+                   success: function (result) {
+                       // result를 먼저 콘솔에 찍어보자!
+                       var $gu = $("#gu");
+                       $gu.empty();
+                       for(element of result){
+                           $("<option>").text(element).appendTo($gu);
+                       }
+                   }
+                });
+            });    
+                $("#gu").on("change",function () {
+                var params = {
+                    gu:$("#gu").val()
+                };
+                $.ajax({
+                   url: "http://106.243.194.230:8500/list/dong",
+                   method: "get",
+                   data: params,
+                   success: function (result) {
+                       // result를 먼저 콘솔에 찍어보자!
+                       var $dong = $("#dong");
+                       $dong.empty();
+                       for(element of result){
+                           $("<option>").text(element).appendTo($dong);
+                       }
+                   }
+                });
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <!-- http://106.243.194.230:8500/list/gu?city=인천 -->
+    <select id="city">
+        <option disabled selected>지역을 선택하세요</option>
+        <option>서울</option>
+        <option>경기</option>
+        <option>인천</option>
+    </select>
+    <select id="gu">
+        <option disabled selected>지역부터 선택하세요.</option>
+    </select>
+    <select id="dong">
+        <option disabled selected>지역과 구부터 선택하세요.</option>
+    </select>
+</body>
+</html>

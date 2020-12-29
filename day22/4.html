@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        var totalCount = 135;
+        var pageNo = 6;
+        var articlePerPage = 10;
+        var countOfPage = Math.floor(totalCount/10)+1;
+        // alert(countOfPage);
+        var pagePerBlock = 5;
+        var blockNo = Math.floor((pageNo-1)/pagePerBlock);
+        // pageNo    1~5   6~10  11~15
+        // blockNO -> 0     1     2
+        // prev       0     5     10
+        // start      1     6     11
+        // end        5     10    14 
+        // next       6     11    0 
+        var prev = blockNo * pagePerBlock;
+        var start = prev + 1;
+        var end = prev + pagePerBlock;
+        var next = end + 1;
+        // 마지막 블록일 경우
+        if(end>=countOfPage){
+            end = countOfPage;
+            next = 0;
+        }
+        console.log("이전으로 : "+ prev);
+        console.log("처음 : "+ start);
+        console.log("마지막 : "+ end);
+        console.log("다음으로 : "+ next);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
