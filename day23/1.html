@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            var pageno = location.search.substring(8);
+            if(pageno==""){
+                pageno=1;
+            }    
+            var totalcount = 123;   //총 글의 개수
+            var pagesize = 10;      // 한페이지에 글이 몇개냐       
+            var blocksize = 5;      // 한박스의 넣을 페이지 수
+            var countofPage = Math.floor((totalcount-1)/pagesize)+1;  // 총 페이지 수 
+            var blockno = Math.floor((pageno-1)/5)  // 박스의 개수 
+    
+            var prev = blockno * blocksize;
+            var start= prev + 1;
+            var end = prev + blocksize;
+            var next = end + 1;
+    
+            if(end>=countofPage){
+                end = countofPage;
+                next = 0;
+            }
+            // 기존 페이지를 지운다.
+            var $pagination = $(".pagination");
+            $pagination.empty();
+            if(prev>0){
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href","1.html?pageno="+prev).text("이전으로").appendTo($li);
+            }
+            for(var i=start; i<=end; i++){
+                var $li = $("<li>").appendTo($pagination);
+                if(i==pageno)
+                    $li.attr("class","active");
+                $("<a>").attr("href","1.html?pageno="+i).text(i).appendTo($li);
+            }
+            if(next>0){
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href","1.html?pageno="+next).text("다음으로").appendTo($li);
+            }
+
+
+        });
+        // 글 123개 있다.
+        //      1 2 3 4 5 다음
+        // 이전 6 7 8 9 10 다음 
+        // 이전 11 12 13
+    </script>
+</head>
+<body>
+    <ul class="pagination">
+    </ul>
+</body>
+</html>
