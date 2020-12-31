@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        #page { width: 800px; margin: 0 auto;}
+        header { height:100px; border: 1px solid skyblue;}
+        nav { height: 50px; background-color: orange;}
+        aside { background-color: gray; float:left;
+            width: 100px; height: 300px;}
+        footer { height: 50px; border: 1px solid skyblue; }
+        section { width:700px; min-height: 500px;
+            float:right;}
+        #main { overflow: hidden;}
+    </style>
+    <script>
+        var blockSize = 5;
+
+        function printList(page) {
+            var $tbody = $("#list tbody");
+            console.log($tbody);
+            for(contact of page.contacts) {
+                var $tr = $("<tr>").appendTo($tbody);
+                $("<td>").text(contact.no).appendTo($tr);
+                $("<td>").text(contact.name).appendTo($tr);
+                $("<td>").text(contact.tel).appendTo($tr);
+                $("<td>").text(contact.address).appendTo($tr);    
+            }
+        }
+
+        function getPagination(pageno, pagesize, totalcount) {
+            var countOfPage = Math.floor((totalcount-1)/pagesize)+1;
+            var blockNo = Math.floor((pageno-1)/blockSize);
+            //          1~5     6~10    11~14
+            // blockNo   0      1       2
+            // prev      0      5       10
+            // start     1      6       11
+            // end       5      10      14  (15)
+            // next      6      11      0   (16)
+            prev = blockNo * blockSize;
+            start = prev + 1;
+            end = prev + blockSize;
+            next = end + 1;
+            if(end>=countOfPage) {
+                end = countOfPage;
+                next = 0;
+            }
+            return {
+            // 필드명 : 값
+                prev: prev,
+                start: start,
+                end: end,
+                next: next                        
+            }
+        }
+
+        function printPagination(page) {
+            var pagination = getPagination(page.pageno, page.pagesize, page.totalcount);
+            var $pagination = $("#pagination .pagination");
+            var url = "paging2.html";
+            if(pagination.prev>0) {
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href", url + "?pageno="+prev)
+                    .text("이전").appendTo($li);
+            }
+            for(var i=pagination.start; i<=pagination.end; i++) {
+                var $li = $("<li>").appendTo($pagination);
+                if(i==page.pageno)
+                    $li.attr("class","active");
+                $("<a>").attr("href", url+"?pageno="+i)
+                    .text(i).appendTo($li);
+            }
+            if(pagination.next>0) {
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href", url + "?pageno="+next)
+                    .text("다음").appendTo($li);
+            }
+        }
+
+        $(document).ready(function() {
+            var pageno = location.search.substring(8);
+            if(pageno=="")
+                pageno=1;
+            var params = {
+                pageno: pageno,
+                pagesize: 10
+            }
+            $.ajax({
+                url: "http://sample.bmaster.kro.kr/contacts",
+                method: "get",
+                data : params,
+                success:function(page) {
+                    printList(page);
+                    printPagination(page);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="page">
+    <header>HEADER</header>
+    <nav>메인 메뉴</nav>
+    <div id="main">
+        <aside></aside>
+        <section>
+            <div id="list">
+                <table class="table table-hover">
+                    <thead>
+                        <th>번호</th><th>이름</th><th>전화번호</th>
+                        <th>주소</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="pagination">
+                <ul class="pagination">
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer>FOOTER</footer>
+</div>
+</body>
+</html>
