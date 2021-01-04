@@ -1,0 +1,9 @@
+*{box-sizing: border-box; margin:0; padding:0;}
+#page{
+    width: 800px; margin: 0 auto;
+}
+#main{
+    overflow: hidden;
+}
+aside{width:200px; height: 300px; border: 1px solid purple; float:left;}
+section{ width:600px; border:1px solid orange; float: right; min-height: 400px;}

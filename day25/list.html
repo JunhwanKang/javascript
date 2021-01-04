@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script/main.js"></script>
+    <script>
+        function printList(page) {
+            var $tbody = $("#list tbody");
+            for(c of page.contacts){
+                var $tr = $("<tr>").appendTo($tbody);
+                    $("<td>").text(c.no).appendTo($tr);
+                    var $td = $("<td>").appendTo($tr);
+                    $("<a>").attr("href", "read.html?no="+c.no).text(c.name).appendTo($td);
+                    $("<td>").text(c.tel).appendTo($tr);
+                    $("<td>").text(c.address).appendTo($tr);
+            }   
+        }
+        var blockSize = 5;
+
+        function getPagination(pageno, pagesize, totalcount) {
+            var countOfPage = Math.floor((totalcount-1)/pagesize)+1;
+            var blockNo = Math.floor((pageno-1)/blockSize);
+            prev = blockNo * blockSize;
+            start = prev + 1;
+            end = prev + blockSize;
+            next = end + 1;
+            if(end>=countOfPage) {
+                end = countOfPage;
+                next = 0;
+            }
+            return {
+            // 필드명 : 값
+                prev: prev,
+                start: start,
+                end: end,
+                next: next                        
+            }
+        }
+
+        function printPaignation(page) {
+            var pagination = getPagination(page.pageno, page.pagesize, page.totalcount);
+            var $pagination = $("#pagination .pagination");
+            var url = "list.html";
+            if(pagination.prev>0) {
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href", url + "?pageno="+prev)
+                    .text("이전").appendTo($li);
+            }
+            for(var i=pagination.start; i<=pagination.end; i++) {
+                var $li = $("<li>").appendTo($pagination);
+                if(i==page.pageno)
+                    $li.attr("class","active");
+                $("<a>").attr("href", url+"?pageno="+i)
+                    .text(i).appendTo($li);
+            }
+            if(pagination.next>0) {
+                var $li = $("<li>").appendTo($pagination);
+                $("<a>").attr("href", url + "?pageno="+next)
+                    .text("다음").appendTo($li);
+            }
+        }
+        $(document).ready(function () {
+            var pageno = location.search.substring(8);
+            if(pageno == "")
+                pageno = 1;
+
+            params={
+                pageno : pageno,
+                pagesize:10
+            }
+            $.ajax({
+                url: "http://sample.bmaster.kro.kr/contacts",
+                method: "get",
+                data: params,
+                success: function (page) {
+                    printList(page);
+                    printPaignation(page);
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <header></header>
+        <nav></nav>
+        <div id="main">
+            <aside></aside>
+            <section>
+                <div id="list">
+                    <table class="table table-border">
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>이름</th>
+                                <th>전화</th>
+                                <th>주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="list"></div>
+                <div id="pagination" style="text-align: center;">
+                    <ul class="pagination">
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>
